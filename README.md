@@ -1,41 +1,60 @@
 # 🚀 Perakende Stok Optimizasyonu ve Talep Tahmini
 
-Bu proje, perakende satış verilerinizi kullanarak ABC analizi, satış tahmini (Prophet modeli ile) ve stok optimizasyonu yapmanıza olanak sağlar.  
-Streamlit tabanlı interaktif bir web uygulamasıdır.
+Facebook Prophet modeli ile satış tahminleri yapan ve ABC analizi ile stok optimizasyonu sağlayan Streamlit uygulaması.
 
----
+## 🌟 Canlı Demo
+**[Uygulamayı Deneyin](https://kaanbostan-tahmin-similasyonu.streamlit.app/)**
 
-## Özellikler
+## ✨ Ana Özellikler
+- **ABC Analizi** - Ürünleri gelire göre A, B, C kategorilerine ayırır
+- **Satış Tahmini** - Prophet modeli ile gelecek satış tahminleri
+- **Stok Optimizasyonu** - Güvenlik stoğu ve EOQ hesaplamaları
+- **Görselleştirmeler** - İnteraktif grafikler ve dashboard
 
-- CSV veya manuel veri girişi ile kolay kullanım  
-- ABC analizine göre ürün önceliklendirme  
-- Facebook Prophet kullanarak ürün bazlı satış tahminleri  
-- Tahmin sonuçlarının grafiklerle görselleştirilmesi  
-- Güvenlik stoğu ve ekonomik sipariş miktarı (EOQ) hesaplamaları  
-- Ürün performans metrikleri ve günlük satış heatmap  
+## 📋 Nasıl Kullanılır?
 
----
+### 1. Veri Hazırlama
+Verileriniz şu formatta olmalı:
+```csv
+date,product,sales
+2024-01-01,Ürün A,100
+2024-01-02,Ürün A,120
+2024-01-01,Ürün B,80
+```
 
-## Kullanım
+**Önemli:** 
+- Tarih formatı: YYYY-MM-DD
+- Sütun adları tam olarak: `date`, `product`, `sales`
+- En az 10-15 satır veri olması önerilir
+- **Her ürün için en az 2 farklı tarihte veri olmalı** (grafiklerin çıkması için)
+- Aynı ürünün birden fazla gündeki satış verisi gerekli
 
-1. Verilerinizi yükleyin veya manuel girin (date, product, sales sütunları gereklidir).  
-2. ABC analizi ile ürünlerinizi kategorilere ayırın.  
-3. İlgili ürünü seçip, geleceğe yönelik satış tahminleri oluşturun.  
-4. Tahminlere göre stok önerilerini ve EOQ hesaplamalarını görüntüleyin.  
+### 2. Veri Yükleme
+- **CSV Yükleme:** Hazırladığınız CSV dosyasını yükleyin
+- **Manuel Giriş:** Arayüzde direkt veri girin
 
----
+### 3. Sonuçları İnceleme
+- **ABC Analizi:** Hangi ürünler en çok gelir getiriyor?
+- **Tahmin Grafikleri:** Gelecek satışlar nasıl olacak?
+- **Stok Önerileri:** Ne kadar stok tutmalısınız?
 
-## Önemli Notlar ve Bilinen Sınırlamalar
+## 🛠️ Teknolojiler
+- **Python** - Streamlit, Pandas, Prophet
+- **Görselleştirme** - Plotly charts
+- **Model** - Facebook Prophet (zaman serisi tahmini)
 
-- **Tedarik Süresi (Lead Time):**  
-  Mevcut stok önerileri hesaplamasında, tedarik süresi sabit veya kullanıcı tarafından girilmiyor. Bu nedenle, önerilen minimum stok seviyesi gerçek tedarik süresine göre yeterli veya fazla olabilir.  
-  Gelecekte bu parametrenin kullanıcı tarafından girilmesi veya ürün bazlı yönetilmesi planlanmaktadır.  
+## 💡 Kimler Kullanabilir?
+- **Perakende mağaza sahipleri** - Stok planlaması
+- **E-ticaret işletmeleri** - Talep tahmini
+- **KOBİ'ler** - Envanter yönetimi
+- **Öğrenciler** - Veri analizi projesi
 
-- **Tahmin Modeli:**  
-  Prophet modeli veri kalitesine bağlıdır. Eksik günler veya çok düşük veri sayısı tahmin doğruluğunu etkileyebilir.  
-  Eksik günlerin veri setine dahil edilip, sıfır ile doldurulması önerilir.
+## ⚡ Hızlı Başlangıç
+1. Uygulamayı açın: [Link](https://kaanbostan-tahmin-similasyonu.streamlit.app/)
+2. CSV dosyanızı yükleyin veya örnek veri girin
+3. Sonuçları inceleyin ve kararlarınızı alın
 
-- **Stok Hesaplama:**  
-  Güvenlik stoğu ve minimum stok seviyesi, istatistiksel varsayımlara dayanır ve iş süreçlerine göre özelleştirilebilir.  
-
----
+## 📞 İletişim
+- **Geliştirici:** Fatih Kaan Bostan
+- **E-posta:** kaan.kbostan@gmail.com
+- **GitHub:** [kaanbostan](https://github.com/kaanbostan)
